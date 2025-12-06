@@ -11,7 +11,7 @@ class ChuangYeBanTemperatureStrategy(BaseStrategy):
                     f"\n\n{url_content}\n\n")
         temperature = int(get_response(question))
 
-        temperatures_to_alert = [10, 20, 30, 50, 57, 60, 70, 80, 90]
+        temperatures_to_alert = [10, 20, 30, 50, 60, 70, 80, 90]
         if temperature in temperatures_to_alert:
             return self.build_message(temperature)
         return None
