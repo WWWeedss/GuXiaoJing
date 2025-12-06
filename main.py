@@ -4,6 +4,15 @@ from email_warrpped.email_tool import send_email
 from strategies.chuang_ye_ban_temperature_strategy import ChuangYeBanTemperatureStrategy
 
 if __name__ == "__main__":
+
+    import os
+
+    print("🔍 DEBUG ENV:")
+    print("SENDER_EMAIL =", repr(os.getenv("SENDER_EMAIL")))
+    print("SMTP =", repr(os.getenv("SMTP")))
+    print("DEEPSEEK_API_KEY =", repr(os.getenv("DEEPSEEK_API_KEY")))
+    print("-" * 50)
+
     strategies = [
         ChuangYeBanTemperatureStrategy(),
     ]

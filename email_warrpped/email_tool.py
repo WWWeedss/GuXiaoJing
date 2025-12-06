@@ -3,8 +3,8 @@ def send_email(recipient: str, subject: str, body: str) -> None:
     import smtplib
     from email.mime.text import MIMEText
     from email.header import Header
-    sender_email = os.environ.get("SENDER_EMAIL")
-    sender_password = os.environ.get("SMTP")
+    sender_email = os.getenv("SENDER_EMAIL")
+    sender_password = os.getenv("SMTP")
 
     if not sender_email or not sender_password:
         raise ValueError("请在环境变量中设置 SENDER_EMAIL 和 SMTP")
