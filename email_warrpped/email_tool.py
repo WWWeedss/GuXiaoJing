@@ -7,7 +7,7 @@ def send_email(recipient: str, subject: str, body: str) -> None:
     sender_password = os.environ.get("SMTP")
 
     if not sender_email or not sender_password:
-        raise ValueError("请在 .env 中设置 SENDER_EMAIL 和 EMAIL_PASSWORD")
+        raise ValueError("请在环境变量中设置 SENDER_EMAIL 和 SMTP")
 
     msg = MIMEText(body, 'plain', 'utf-8')
     msg['From'] = Header(sender_email)
