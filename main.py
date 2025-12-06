@@ -10,7 +10,6 @@ if __name__ == "__main__":
 
     messages = []
     for strategy in strategies:
-        message = strategy.get_message()
         try:
             msg = strategy.get_message()
             if msg is not None:
