@@ -6,7 +6,7 @@ from strategies.base_strategy import BaseStrategy
 class QQQValuationStrategy(BaseStrategy):
     def get_message(self):
         qqq_valuation = self.get_qqq_valuation()
-        valuation_to_alert = [10, 20, 30, 40, 50, 60, 70, 80, 88, 90]
+        valuation_to_alert = [10, 20, 30, 40, 50, 60, 70, 80, 90]
         if qqq_valuation is not None and int(qqq_valuation) in valuation_to_alert:
             return self.build_message(qqq_valuation)
         return None
