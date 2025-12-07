@@ -11,7 +11,7 @@ class ChuangYeBanTemperatureStrategy(BaseStrategy):
                     f"\n\n{url_content}\n\n")
         temperature = int(get_response(question))
 
-        temperatures_to_alert = [10, 20, 30, 50, 60, 70, 80, 90]
+        temperatures_to_alert = [10, 20, 30, 40, 50, 60, 70, 80, 90]
         if temperature in temperatures_to_alert:
             return self.build_message(temperature)
         return None
@@ -22,8 +22,12 @@ class ChuangYeBanTemperatureStrategy(BaseStrategy):
 
 if __name__ == "__main__":
     strategy = ChuangYeBanTemperatureStrategy()
-    message = strategy.get_message()
-    if message:
-        print(message)
-    else:
-        print("今日无创业板温度预警消息。")
+    success_times = 0
+    for i in range(100):
+        try:
+            msg = strategy.get_message()
+            success_times += 1
+            print(msg)
+        except Exception as e:
+            print(f"Error: {str(e)}")
+    print(f"成功率: {success_times}/100")

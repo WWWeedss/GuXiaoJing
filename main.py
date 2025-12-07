@@ -2,6 +2,7 @@ from pyexpat.errors import messages
 
 from email_warrpped.email_tool import send_email
 from strategies.chuang_ye_ban_temperature_strategy import ChuangYeBanTemperatureStrategy
+from strategies.qqq_valuation_strategy import QQQValuationStrategy
 
 if __name__ == "__main__":
 
@@ -15,6 +16,7 @@ if __name__ == "__main__":
 
     strategies = [
         ChuangYeBanTemperatureStrategy(),
+        QQQValuationStrategy(),
     ]
 
     messages = []
@@ -35,7 +37,7 @@ if __name__ == "__main__":
                              "-" * 40,
                          ] + messages + ["-" * 40])
 
-        subject = f"股小警-大盘估值提醒)"
+        subject = f"股小警-大盘估值提醒"
         send_email(recipient, subject, body)
     else:
         print("今日无任何策略触发，不发送邮件。")
