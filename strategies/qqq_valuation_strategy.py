@@ -24,6 +24,7 @@ class QQQValuationStrategy(BaseStrategy):
 
             # 提取 pe_over_history
             pe_over_history = data["data"]["pe_over_history"]
+            # 将形如 0.1206 转换为 88.00
             rounded_pe = round(pe_over_history, 2)
             return 100 - 100 * rounded_pe
         except requests.exceptions.RequestException as e:
