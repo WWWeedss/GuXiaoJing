@@ -26,7 +26,7 @@ if __name__ == "__main__":
             if msg is not None:
                 messages.append(msg)
         except Exception as e:
-            # 可选：也可以发一条错误通知
+            # 可以发一条错误通知
             messages.append(f"[错误] {strategy.__class__.__name__}: {str(e)}")
 
     recipient = "qiuyan_gu@163.com"

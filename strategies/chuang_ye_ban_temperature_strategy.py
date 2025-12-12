@@ -22,12 +22,4 @@ class ChuangYeBanTemperatureStrategy(BaseStrategy):
 
 if __name__ == "__main__":
     strategy = ChuangYeBanTemperatureStrategy()
-    success_times = 0
-    for i in range(100):
-        try:
-            msg = strategy.get_message()
-            success_times += 1
-            print(msg)
-        except Exception as e:
-            print(f"Error: {str(e)}")
-    print(f"成功率: {success_times}/100")
+    print(strategy.get_message())
