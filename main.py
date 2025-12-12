@@ -7,7 +7,8 @@ from strategies.qqq_valuation_strategy import QQQValuationStrategy
 if __name__ == "__main__":
 
     import os
-
+    from dotenv import load_dotenv
+    load_dotenv()
     print("🔍 DEBUG ENV:")
     print("SENDER_EMAIL =", repr(os.getenv("SENDER_EMAIL")))
     print("SMTP =", repr(os.getenv("SMTP")))
